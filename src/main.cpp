@@ -2,6 +2,7 @@
 #include <SDL2/SDL.h>
 #include <glad/glad.h>
 
+// Screen width and height const vars
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 800;
 
