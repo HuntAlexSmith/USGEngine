@@ -1,0 +1,1 @@
+[Here](https://github.com/talhacali/ECS/tree/master) is a repo that has some decent source code for understanding how to handle memory for components in ECS. They use a similar idea with having a free list as well as a general linear allocator. Personally, I like the idea of having a PoolAllocator, which can allow for re-use of previous memory better.

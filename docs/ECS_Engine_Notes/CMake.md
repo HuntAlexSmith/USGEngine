@@ -1,0 +1,1 @@
+I have updated the cmake settings so that it generates project files for Visual Studio 2022. Now everything should be fully set up and ready to go for if I want to switch over to Visual Studio. Also, I have learned some new CMake commands to copy certain files around after build.

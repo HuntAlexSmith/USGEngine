@@ -1,0 +1,1 @@
+One things about entities that I am a bit confused about it identification for the entities. Looks like my best bet would be to set up some module that can generate a unique id for each Entity? This id could then be used to find the components that each entity is using.
