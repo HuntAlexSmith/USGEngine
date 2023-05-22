@@ -3,7 +3,6 @@
 #include "Clock.h"
 
 int main(int argc, char* argv[]) {
-
     // First instance of engine
     std::shared_ptr<Engine> engine = Engine::GetInstance();
 

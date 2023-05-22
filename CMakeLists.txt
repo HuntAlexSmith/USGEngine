@@ -11,7 +11,7 @@ include_directories(include)
 link_directories(libs)
 
 # Executable gets added
-add_executable(USGEngine src/main.cpp src/glad.c src/Engine/Engine.cpp src/Clock.cpp src/ID/IDGen.cpp)
+add_executable(USGEngine src/main.cpp src/glad.c src/Engine/Engine.cpp src/Clock.cpp src/ID/IDGen.cpp src/Engine/Entity/Entity.cpp)
 
 # Custom command for copying important SDL2 dll
 add_custom_command(TARGET USGEngine POST_BUILD        # Adds post-build event
