@@ -9,6 +9,7 @@
 #include "Engine.h"
 #include <iostream> // cout, cin
 #include <SDL2/SDL.h>
+#include "../ID/IDGen.h"
 
 // Declare static instance of the engine
 std::shared_ptr<Engine> Engine::instance_;
@@ -21,6 +22,7 @@ Engine::Engine() :
 {
 }
 
+// Destructor
 Engine::~Engine() {
 
 }
@@ -57,7 +59,6 @@ void Engine::Update(float dt) {
         isRunning_ = false;
         std::cout << "Engine has been running for " << static_cast<int>(lifeTimer_) << " seconds, shutting down.\n";
     }
-
 }
 
 void Engine::Shutdown() {
