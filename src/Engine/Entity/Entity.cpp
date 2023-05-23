@@ -10,7 +10,7 @@
 
 Entity::Entity() :
     id_(GenID())
-    , name_()
+    , name_("Entity")
 {
 }
 
