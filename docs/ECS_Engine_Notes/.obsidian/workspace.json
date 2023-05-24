@@ -8,31 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1297c29515c98626",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Libraries.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "13b97cc4b9c06724",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Memory Management.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d7d37aaa0a5d4dc8",
+            "id": "dbb374389fea4bc3",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -43,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -179,8 +154,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d7d37aaa0a5d4dc8",
+  "active": "dbb374389fea4bc3",
   "lastOpenFiles": [
+    "Engine/Scenes.md",
+    "Engine",
     "Overview.md",
     "Resources.md",
     "Components/Component.md",

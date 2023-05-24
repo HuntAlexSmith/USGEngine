@@ -1,0 +1,1 @@
+I have created a basic scene class that will basically act as a manager for Entities and Components. At the moment, it has 

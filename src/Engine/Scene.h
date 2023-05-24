@@ -47,7 +47,7 @@ private:
     // Entity Container
     EntityMap entityContainer_;
 
-    // Component Container
+    // Component Pool Container
 
 };
 
