@@ -4,4 +4,4 @@
 Started out with the memory management for component pools. Currently have a base allocator and working on a pool allocator. The base allocator class is purely just an Allocate and Free pure virtual function, so simple to define a new allocator. Blanking, so going to take a break. Need to figure out how I want to handle allocations. If components take up small amounts of data, the allocations are easy to understand, but also want to take into account page sizes.
 
 ## May 24th
-Something I have considered while working on this: it may be a good idea to have a debug setting that enables tracking bad memory issues, because checking for memory issues is very expensive, especially when validating freeing an address.
+Something I have considered while working on this: it may be a good idea to have a debug setting that enables tracking bad memory issues, because checking for memory issues is very expensive, especially when validating freeing an address. Finished up a PoolAllocator class that uses very similar practices that I implemented in CS280 for the ObjectAllocator.

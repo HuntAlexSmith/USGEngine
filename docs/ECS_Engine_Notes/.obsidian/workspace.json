@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Memory Management.md",
+                "file": "Components/Component.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Memory Management.md",
+                "file": "Components/Component.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Memory Management.md",
+                "file": "Components/Component.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Memory Management.md"
+                "file": "Components/Component.md"
               }
             }
           }
@@ -156,6 +156,7 @@
   },
   "active": "dbb374389fea4bc3",
   "lastOpenFiles": [
+    "Memory Management.md",
     "Engine/Scenes.md",
     "Engine",
     "Overview.md",
@@ -165,7 +166,6 @@
     "Systems/System.md",
     "CMake.md",
     "Libraries.md",
-    "Memory Management.md",
     "Entities/IDSystem.md",
     "Libs.md",
     "Libs and APIs.md",

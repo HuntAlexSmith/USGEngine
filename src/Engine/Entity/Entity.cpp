@@ -9,13 +9,13 @@
 #include "Entity.h"
 
 Entity::Entity() :
-    id_(GenID())
+    id_(GenEntityID())
     , name_("Entity")
 {
 }
 
 Entity::Entity(const std::string& name) :
-    id_(GenID())
+    id_(GenEntityID())
     , name_(name)
 {
 }

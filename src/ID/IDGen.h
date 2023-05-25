@@ -9,10 +9,19 @@
 #ifndef IDGEN_H
 #define IDGEN_H
 
-#include <stdint.h> // uint64_t
+#include <cstdint> // uint64_t
 
 typedef uint64_t ID; // Typedef unsigned long long as ID
+typedef unsigned ClassID;
 
-ID GenID(); // Function for generating an id
+ID GenEntityID(); // Function for generating an id
+ID GenComponentID(); // Function for generating a component id
+
+template <class T>
+ClassID GenClassID() {
+    extern ClassID curClassID;
+    static ClassID nextID = curClassID++;
+    return nextID;
+}
 
 #endif

@@ -8,8 +8,14 @@
 
 #include "IDGen.h"
 
-static ID curID = 0; // Static variable for getting the needed id
+static ID curEntityID = 0; // Static variable for getting the needed id
+static ID curComponentID = 0;
+ClassID curClassID = 0;
 
-ID GenID() {
-    return curID++;
+ID GenEntityID() {
+    return curEntityID++;
+}
+
+ID GenComponentID() {
+    return curComponentID++;
 }

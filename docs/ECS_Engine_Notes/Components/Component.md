@@ -1,0 +1,2 @@
+## May 24th
+Finished a very basic memory manager for better cache coherency when iterating over components and updating them. Now trying to figure out how to make sure that all components know which entity they are a part of. Could make it so that each component has data for holding a parent ID. That will take up 8 bytes for all components, but I think that is something I am willing to do, unless I find a better way.

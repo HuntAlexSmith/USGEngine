@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>      // SDL main
 #include "Engine/Engine.h" // Engine
-#include "Clock.h"
+#include "Clock.h"         // Clock
 
 int main(int argc, char* argv[]) {
     // First instance of engine

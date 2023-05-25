@@ -27,6 +27,8 @@ public:
     bool SetEntityName(ID id, const std::string& name);
     std::pair<bool, ID> GetEntityByName(const std::string& name);
 
+    // Component functions
+
     // Friend function for testing
     friend std::ostream& operator<<(std::ostream& os, const Scene& scene) {
         // Print out scene
@@ -46,8 +48,6 @@ private:
 
     // Entity Container
     EntityMap entityContainer_;
-
-    // Component Pool Container
 
 };
 

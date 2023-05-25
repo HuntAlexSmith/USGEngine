@@ -12,11 +12,25 @@ static const unsigned char AllocPattern = 0xAA;
 static const unsigned char FreePattern = 0xFF;
 
 // Ctor and dtor
+PoolAlloc::PoolAlloc() :
+    objSize_(0)
+    , objPerPage_(0)
+    , pageSize_(0)
+    , debugFlag_(false)
+    , needInit_(true)
+    , numAllocs_(0)
+    , numFrees_(0)
+    , pageList_()
+    , freeList_()
+{
+}
+
 PoolAlloc::PoolAlloc(size_t objSize, size_t objPerPage, bool debug) :
     objSize_(objSize)
     , objPerPage_(objPerPage)
     , pageSize_(objSize * objPerPage)
     , debugFlag_(debug)
+    , needInit_(false)
     , numAllocs_(0)
     , numFrees_(0)
     , pageList_()
@@ -43,6 +57,10 @@ PoolAlloc::~PoolAlloc() {
 
 // Allocate memory from the allocator
 void* PoolAlloc::Allocate() {
+    // Hasn't been initialized yet
+    if(needInit_)
+        return nullptr;
+
     // If free list is empty, need to allocate another page
     if(freeList_.empty())
         AllocatePage();
@@ -77,6 +95,18 @@ void PoolAlloc::Free(void* addr) {
     // Fill that portion of memory with the freed pattern for debug
     if(debugFlag_)
         memset(addr, FreePattern, objSize_);
+}
+
+// Function for initialize
+void PoolAlloc::Init(size_t objSize, size_t objPerPage, bool debug) {
+    if(needInit_) {
+        needInit_ = false;
+        debugFlag_ = debug;
+        objSize_ = objSize;
+        objPerPage_ = objPerPage;
+        pageSize_ = objSize_ * objPerPage_;
+        AllocatePage();
+    }
 }
 
 void PoolAlloc::AllocatePage() {
@@ -116,11 +146,13 @@ bool PoolAlloc::VerifyFree(void* addr) {
     }
 
     // Will also want to check for a double free on the free list
-    for(void* freeAddr : freeList_) {
-        if(freeAddr == addr) {
-            std::cout << "Double Free Detected!\n";
-            std::cout << "Attempted to free address: " << addr << "\n\n";
-            return false;
+    if(!freeList_.empty()) { // Need to be careful if free list is empty
+        for(void* freeAddr : freeList_) {
+            if(freeAddr == addr) {
+                std::cout << "Double Free Detected!\n";
+                std::cout << "Attempted to free address: " << addr << "\n\n";
+                return false;
+            }
         }
     }
 

@@ -18,12 +18,16 @@ class PoolAlloc : public IAllocator {
 public:
 
     // Ctor and dtor
+    PoolAlloc();
     PoolAlloc(size_t objSize, size_t objPerPage, bool debug=false);
     ~PoolAlloc();
 
     // Overrides
     void* Allocate() override;
     void Free(void*) override;
+
+    // Function for initializing a pool allocator
+    void Init(size_t objSize, size_t objPerPage, bool debug=false);
 
     // Print function
     friend std::ostream& operator<<(std::ostream& os, const PoolAlloc& allocator) {
@@ -54,6 +58,7 @@ private:
     size_t objPerPage_;
     size_t pageSize_;
     bool debugFlag_;
+    bool needInit_;
 
     // Keep track of how many times Allocate and Free were called and successful
     unsigned numAllocs_;
