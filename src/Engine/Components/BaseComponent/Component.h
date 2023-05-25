@@ -15,15 +15,15 @@ template <class T>
 class Component : public IComponent {
 public:
     // Ctor
-    Component() : IComponent(), classId_(GenClassID<T>()) {}
+    Component() : IComponent() {}
 
-    // Member functions
-    inline ClassID GetClassID() { return classId_; }
-
+    // Class ID will be public and static const, as it shouldn't change after assignment
+    static const ClassID classID;
 private:
-    // Class id for typing purposes
-    ClassID classId_;
 
 };
 
-#endif //USGENGINE_STUB_H
+template<class T>
+const ClassID Component<T>::classID = GenClassID<T>();
+
+#endif

@@ -11,6 +11,7 @@
 // Ctor and dtor
 Scene::Scene() :
     entityContainer_()
+    , compPoolManager_()
 {
 }
 

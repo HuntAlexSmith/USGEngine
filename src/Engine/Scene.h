@@ -11,6 +11,7 @@
 
 #include <unordered_map>
 #include "Entity/Entity.h"
+#include "Components/ComponentPool/ComponentPoolManager.h"
 
 typedef std::unordered_map<ID, Entity> EntityMap;
 
@@ -28,6 +29,20 @@ public:
     std::pair<bool, ID> GetEntityByName(const std::string& name);
 
     // Component functions
+    template <class T>
+    IComponent* CreateComponent(ID entityID) {
+        return compPoolManager_.CreateComponent<T>(entityID);
+    }
+
+    template <class T>
+    IComponent* GetComponent(ID entityID) {
+        return compPoolManager_.GetComponent<T>(entityID);
+    }
+
+    template <class T>
+    void DeleteComponent(ID entityID) {
+        compPoolManager_.DeleteComponent<T>(entityID);
+    }
 
     // Friend function for testing
     friend std::ostream& operator<<(std::ostream& os, const Scene& scene) {
@@ -48,6 +63,9 @@ private:
 
     // Entity Container
     EntityMap entityContainer_;
+
+    // Component Pool Manager
+    ComponentPoolManager compPoolManager_;
 
 };
 
