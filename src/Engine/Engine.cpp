@@ -9,6 +9,7 @@
 #include "Engine.h"
 #include <iostream> // cout, cin
 #include <SDL2/SDL.h>
+#include "../Common/Common.h"
 #include "../ID/IDGen.h"
 
 // Declare static instance of the engine

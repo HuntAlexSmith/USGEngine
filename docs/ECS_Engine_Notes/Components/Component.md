@@ -1,2 +1,4 @@
 ## May 24th
 Finished a very basic memory manager for better cache coherency when iterating over components and updating them. Now trying to figure out how to make sure that all components know which entity they are a part of. Could make it so that each component has data for holding a parent ID. That will take up 8 bytes for all components, but I think that is something I am willing to do, unless I find a better way.
+
+Alright, all the component stuff seems to be working properly. Took a lot of inspiration from the repo mentioned in [MemoryManagement](MemoryManagement), but I believe I have a much better understanding of the concepts. Really interesting how you can work around to allow dynamic types of classes with templating and statics to keep a counter of what classes have been created.

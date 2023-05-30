@@ -1,0 +1,1 @@
+Splitting up handling all the important render info into a separate engine. This engine will manage things like keeping render queues and managing the SDL resources. Think this will be the easiest way to do this.

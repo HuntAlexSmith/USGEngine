@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Components/Component.md",
+                "file": "Engine/GfxEngine.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Components/Component.md",
+                "file": "Engine/GfxEngine.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Components/Component.md",
+                "file": "Engine/GfxEngine.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Components/Component.md"
+                "file": "Engine/GfxEngine.md"
               }
             }
           }
@@ -156,16 +156,17 @@
   },
   "active": "dbb374389fea4bc3",
   "lastOpenFiles": [
-    "Memory Management.md",
-    "Engine/Scenes.md",
-    "Engine",
-    "Overview.md",
-    "Resources.md",
+    "MemoryManagement.md",
+    "Engine/GfxEngine.md",
     "Components/Component.md",
-    "Entities/Entity.md",
-    "Systems/System.md",
     "CMake.md",
     "Libraries.md",
+    "Overview.md",
+    "Engine/Scenes.md",
+    "Engine",
+    "Resources.md",
+    "Entities/Entity.md",
+    "Systems/System.md",
     "Entities/IDSystem.md",
     "Libs.md",
     "Libs and APIs.md",
