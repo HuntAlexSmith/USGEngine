@@ -8,8 +8,12 @@
 
 #include "GfxEngine.h"
 #include <glad/glad.h>
+#include <stdexcept>
 #include <iostream>
 
+std::shared_ptr<GfxEngine> GfxEngine::instance_ = nullptr;
+
+// Constructor
 GfxEngine::GfxEngine() :
     sdlInit_(true)
     , window_(nullptr)
@@ -18,8 +22,14 @@ GfxEngine::GfxEngine() :
     , glContext_(nullptr)
     , running_(false)
 {
+    GfxEngine* curEngine = instance_.get();
+    if(curEngine != nullptr && this != curEngine) {
+        std::cout << "Invalid Graphics Engine Instance! Throwing Exception..." << std::endl;
+        throw std::runtime_error("Invalid Graphics Engine Instance!");
+    }
 }
 
+// Destructor
 GfxEngine::~GfxEngine() {
 
 }
@@ -101,4 +111,15 @@ void GfxEngine::Shutdown() {
 
     if(sdlInit_)
         SDL_Quit();
+}
+
+std::shared_ptr<GfxEngine> GfxEngine::GetInstance() {
+    // Check for null instance
+    if(instance_ == nullptr) {
+        // Make a new graphics engine
+        instance_ = std::make_shared<GfxEngine>();
+    }
+
+    // Return the instance
+    return instance_;
 }

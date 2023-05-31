@@ -7,11 +7,13 @@
 //      is initialized, updated, and deleted properly.
 //*****************************************************************************
 
-#ifndef USGENGINE_STUB_H
-#define USGENGINE_STUB_H
+#ifndef GFXENGINE_H
+#define GFXENGINE_H
 
 #include "SDL2/SDL.h"
+#include <memory>
 
+// Will only ever want one running at one time, so follow singleton pattern
 class GfxEngine {
 public:
     // Ctor and Dtor
@@ -23,9 +25,14 @@ public:
     void Shutdown();
 
     // Getters
-    inline bool IsRunning() { return running_; }
+    inline bool IsRunning() const { return running_; }
+
+    // Get Instance
+    static std::shared_ptr<GfxEngine> GetInstance();
 
 private:
+
+    static std::shared_ptr<GfxEngine> instance_;
 
     bool sdlInit_;
 
@@ -38,4 +45,4 @@ private:
 
 };
 
-#endif //USGENGINE_STUB_H
+#endif

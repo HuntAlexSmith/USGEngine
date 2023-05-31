@@ -10,6 +10,8 @@
 #define ENGINE_H
 
 #include <memory> // shared_ptr for singleton pattern
+#include "../Graphics/GfxEngine.h"
+#include "Input/InputManager.h"
 
 // There should only ever be one engine running, so we will use singleton pattern. This will allow for anything to
 // access information of the engine
@@ -42,6 +44,12 @@ private:
     float deltaTime_; // The current delta time
     bool isRunning_;  // Flag for if the engine is running or not
     float lifeTimer_; // How long the engine has been alive for in seconds
+
+    // Graphics Engine instance
+    std::shared_ptr<GfxEngine> gfxEngine_;
+
+    // Input management
+    InputManager inputManager_;
 
 };
 
